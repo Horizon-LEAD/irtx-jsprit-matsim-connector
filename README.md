@@ -1,5 +1,9 @@
 # IRTX JSprit to MATSim connector
 
+## TODO
+
+- Test that this works with the prepared input and output data
+
 ## Introduction
 
 This model is a connector between the upstream route optimization model JSprit
