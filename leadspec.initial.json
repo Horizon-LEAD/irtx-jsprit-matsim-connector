@@ -1,0 +1,87 @@
+{
+    "name": "IRTX JSprit to MATSim connector",
+    "description":"The model converts optimized vehicle routes into a format that can be integrated by MATSim into a city-scale simulation",
+    "version": "1.0.0",
+    "status":"draft",
+    "types": [
+        {"name": "Connector", "description":"???"}
+    ],
+    "dockerImage":"???",
+    "url": "TODO",
+    "modelData":  [
+        {
+            "name": "JSprit scenario path",
+            "variableName": "scenario-path",
+            "description": "Path to the scenario file that was used as input to JSprit",
+            "isOutput": false,
+            "isOutputDir": false,
+            "isOptional": false,
+            "inputType": "CLI",
+            "chartType": "NONE",
+            "modelDataType": {
+                "name": "file",
+                "dataType": "file",
+                "extension": "json"
+            }
+        },
+        {
+            "name": "JSprit solution path",
+            "variableName": "solution-path",
+            "description": "Path to the solution file created by JSprit",
+            "isOutput": false,
+            "isOutputDir": false,
+            "isOptional": false,
+            "inputType": "CLI",
+            "chartType": "NONE",
+            "modelDataType": {
+                "name": "file",
+                "dataType": "file",
+                "extension": "json"
+            }
+        },
+        {
+            "name": "Output path",
+            "variableName": "output-path",
+            "description": "Path to were the converted data will be saved",
+            "isOutput": true,
+            "isOutputDir": false,
+            "isOptional": false,
+            "inputType": "CLI",
+            "chartType": "NONE",
+            "modelDataType": {
+                "name": "file",
+                "dataType": "file",
+                "extension": "json"
+            }
+        },
+        {
+            "name": "Coordinate Reference System",
+            "variableName": "crs",
+            "description": "Coordinate Reference System to convert the longitude/latitude information. Must be compatible with the CRS of the MATSim simulation.",
+            "isOutput": false,
+            "isOutputDir": false,
+            "isOptional": false,
+            "inputType": "CLI",
+            "chartType": "NONE",
+            "modelDataType": {
+                "name": "str",
+                "dataType": "str",
+                "regex": "/EPSG:[0-9]+/"
+            }
+        },
+        {
+            "name": "Itinerary start time",
+            "variableName": "start-time",
+            "description": "JSprit does not consider time of day, but starts the first delivery at `0`. The present parameter shifts the movements to define a common earliest shift shart time for the operators.",
+            "isOutput": false,
+            "isOutputDir": false,
+            "isOptional": true,
+            "inputType": "CLI",
+            "chartType": "NONE",
+            "modelDataType": {
+                "name": "int",
+                "dataType": "int"
+            }
+        }
+    ]
+}
