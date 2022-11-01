@@ -7,7 +7,7 @@
         {"name": "Connector", "description":"???"}
     ],
     "dockerImage":"???",
-    "url": "TODO",
+    "url": "https://github.com/Horizon-LEAD/irtx-jsprit-matsim-connector",
     "modelData":  [
         {
             "name": "JSprit scenario path",
