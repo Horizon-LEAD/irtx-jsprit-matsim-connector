@@ -33,7 +33,7 @@ information, refer to the input data for the downstream MATSim model.
 
 The location of the resulting JSON file can be configured (see below).
 
-# Running the model
+## Running the model
 
 To run the model, the `conda` environment needs to be prepared and entered. After,
 one can call `convert_routes.py` as follows:
@@ -70,11 +70,11 @@ be converted as follows:
 
 ```bash
 python3 convert_routes.py \
-  --scenario-path /irtx-jsprit/data/scenario_*.json \
-  --solution-path /irtx-jsprit/data/solution_*.json \
-  --output-path /irtx-jsprit-matsim-connector/output/solution_*.json \
+  --scenario-path /irtx-jsprit/output/scenario_{scenario}.json \
+  --solution-path /irtx-jsprit/output/solution_{scenario}.json \
+  --output-path /irtx-jsprit-matsim-connector/output/solution_{scenario}.json \
   --crs EPSG:2154 \
   --start-time 28800
 ```
 
-Here, replace `* = baseline_2022 | ucc_2022 | ucc_2023`.
+Here, replace `{scenario} = baseline_2022 | ucc_2022 | ucc_2023`.
