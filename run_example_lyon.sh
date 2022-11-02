@@ -1,5 +1,12 @@
 set -e
 
+## Prepare
+cd /home/ubuntu/irtx-jsprit-matsim-connector
+mkdir /home/ubuntu/irtx-jsprit-matsim-connector/output
+
+## Create environment
+conda env create -f environment.yml -n jsprit2matsim
+
 ## Activate environment
 conda activate jsprit2matsim
 
