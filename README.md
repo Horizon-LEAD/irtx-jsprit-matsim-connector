@@ -78,3 +78,14 @@ python3 convert_routes.py \
 ```
 
 Here, replace `{scenario} = baseline_2022 | ucc_2022 | ucc_2023`.
+
+```bash
+docker run --rm \
+  -v $PWD/sample-data:/data \
+  jsprit-2-matsim-irtx:latest \
+  /data/input/scenario.json \
+  /data/input/solution.json \
+  EPSG:2154 \
+  28800 \
+  /data/output
+```
