@@ -1,3 +1,4 @@
+from os.path import join
 import json
 import argparse
 
@@ -17,10 +18,10 @@ parser.add_argument("--start-time", type = float, required = False, default = 8.
 arguments = parser.parse_args()
 
 ### Read data
-with open(arguments.solution_path) as f:
+with open(arguments.solution_path, encoding='utf8') as f:
     solution = json.load(f)
 
-with open(arguments.scenario_path) as f:
+with open(arguments.scenario_path, encoding='utf8') as f:
     scenario = json.load(f)
 
 ### Convert data
@@ -90,5 +91,5 @@ output = {
     "vehicles": vehicles
 }
 
-with open(arguments.output_path, "w+") as f:
+with open(join(arguments.output_path, "traces.json"), "w+", encoding='utf8') as f:
     json.dump(output, f, indent = 2)
