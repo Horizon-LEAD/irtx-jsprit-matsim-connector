@@ -60,11 +60,11 @@ leftovers=(${@})
 FIN_SCENARIO=${leftovers[0]}
 FIN_SOLUTION=${leftovers[1]}
 CRS=${leftovers[2]}
-OUT_PATH=${leftovers[3]}
+OUT_PATH=${leftovers[3]%/}
 START_TIME=""
 if [ ${#leftovers[@]} -eq "5" ]; then
     START_TIME=${leftovers[3]}
-    OUT_PATH=${leftovers[4]}
+    OUT_PATH=${leftovers[4]%/}
 fi
 ##############################################################################
 # Input checks                                                               #
